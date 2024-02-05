@@ -18,6 +18,10 @@ export default {
       fontFamily: {
         Ubuntu: ["Ubuntu", "sans-serif"],
       },
+      backgroundImage: {
+        "desktop-sidebar": "url('/src/assets/images/bg-sidebar-desktop.svg')",
+        "mobile-sidebar": "url('/src/assets/images/bg-sidebar-mobile.svg')",
+      },
     },
     screens: {
       sm: "380px",
