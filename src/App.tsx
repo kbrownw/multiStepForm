@@ -1,6 +1,8 @@
 import useMediaQuery from "./hooks/useMediaQuery";
 import Sidebar from "./components/Sidebar";
 import Heading from "./components/Heading";
+import FormFooter from "./components/FormFooter";
+import Form from "./components/Form";
 
 function App() {
   const isLargeScreen = useMediaQuery("(min-width: 770px)");
@@ -18,15 +20,12 @@ function App() {
         {/* TEXT AND FORM AREA */}
         <div className="grid h-full md:px-28">
           <div className="w-[90%] mx-auto p-5 rounded-lg bg-white shadow-lg md:w-full md:shadow-none">
-            {/* TITLE AND SUBTITLE HERE */}
+            {/* TITLE AND SUBTITLE */}
             <Heading />
             {/* INPUT FIELDS */}
+            <Form />
           </div>
-          <div className="self-end">
-            {/* GO BACK BUTTON */}
-            <h1>Test</h1>
-            {/* NEXT STEP BUTTON */}
-          </div>
+          <FormFooter />
         </div>
       </section>
     </main>
