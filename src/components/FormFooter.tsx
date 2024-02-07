@@ -21,9 +21,7 @@ const FormFooter = () => {
           </ButtonDefault>
         )}
         {selectedStep + 1 === steps.length && (
-          <ButtonDefault type="submit" onClick={(e) => e.preventDefault()}>
-            Confirm
-          </ButtonDefault>
+          <ButtonDefault type="submit">Confirm</ButtonDefault>
         )}
       </div>
     </div>

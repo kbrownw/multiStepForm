@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import { StepContextType, Step } from "../shared/types";
+import { StepContextType, Step, FormValues } from "../shared/types";
+import { useForm } from "react-hook-form";
 
 const steps: Step[] = [
   {
@@ -38,9 +39,26 @@ export const StepContext = createContext<StepContextType | undefined>(
 
 export const StepContextWrapper = ({ children }: Props) => {
   const [selectedStep, setSelectedStep] = useState<number>(0);
+  const { register, handleSubmit, formState } = useForm<FormValues>({
+    mode: "all",
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+    },
+  });
 
   return (
-    <StepContext.Provider value={{ selectedStep, setSelectedStep, steps }}>
+    <StepContext.Provider
+      value={{
+        selectedStep,
+        setSelectedStep,
+        steps,
+        register,
+        handleSubmit,
+        formState,
+      }}
+    >
       {children}
     </StepContext.Provider>
   );

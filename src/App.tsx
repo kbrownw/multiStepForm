@@ -3,9 +3,21 @@ import Sidebar from "./components/Sidebar";
 import Heading from "./components/Heading";
 import FormFooter from "./components/FormFooter";
 import Form from "./components/Form";
+import { useStepContext } from "./context/StepContext";
 
 function App() {
   const isLargeScreen = useMediaQuery("(min-width: 770px)");
+  const {
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useStepContext();
+
+  const onSubmit = handleSubmit((data) => {
+    if (isValid) {
+      console.log("Data", data);
+    }
+    console.log("Errors: ", errors);
+  });
 
   return (
     <main className="h-[100vh] bg-magnolia font-Ubuntu md:flex md:items-center md:justify-center">
@@ -18,7 +30,7 @@ function App() {
         {/* SIDEBAR */}
         <Sidebar isLargeScreen={isLargeScreen} />
         {/* TEXT AND FORM AREA */}
-        <div className="grid h-full md:px-28">
+        <form className="grid h-full md:px-28" onSubmit={onSubmit}>
           <div className="w-[90%] mx-auto p-5 rounded-lg bg-white shadow-lg md:w-full md:shadow-none">
             {/* TITLE AND SUBTITLE */}
             <Heading />
@@ -26,7 +38,7 @@ function App() {
             <Form />
           </div>
           <FormFooter />
-        </div>
+        </form>
       </section>
     </main>
   );
