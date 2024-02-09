@@ -39,12 +39,14 @@ export const StepContext = createContext<StepContextType | undefined>(
 
 export const StepContextWrapper = ({ children }: Props) => {
   const [selectedStep, setSelectedStep] = useState<number>(0);
+  const [isYearly, setIsYearly] = useState<boolean>(false);
   const { register, handleSubmit, formState } = useForm<FormValues>({
     mode: "all",
     defaultValues: {
       name: "",
       email: "",
       phone: "",
+      plan: "",
     },
   });
 
@@ -57,6 +59,8 @@ export const StepContextWrapper = ({ children }: Props) => {
         register,
         handleSubmit,
         formState,
+        isYearly,
+        setIsYearly,
       }}
     >
       {children}

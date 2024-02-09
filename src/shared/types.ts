@@ -22,4 +22,6 @@ export interface StepContextType {
   register: UseFormRegister<FormValues>;
   handleSubmit: UseFormHandleSubmit<FormValues, FormValues>;
   formState: FormState<FormValues>;
+  isYearly: boolean;
+  setIsYearly: (value: boolean) => void;
 }
