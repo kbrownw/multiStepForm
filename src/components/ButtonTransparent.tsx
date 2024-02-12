@@ -16,7 +16,7 @@ const ButtonTransparent = ({
   return (
     <button
       type={type}
-      className="text-[18px] text-cool-gray font-bold"
+      className="text-[18px] text-cool-gray font-bold transition duration-300 hover:text-marine-blue"
       style={style}
       onClick={onClick}
     >

@@ -3,9 +3,7 @@ import InputText from "./InputText";
 import { useStepContext } from "../context/StepContext";
 import { FieldError } from "react-hook-form";
 
-type Props = {};
-
-const FormPersonalInfo = ({}: Props) => {
+const FormPersonalInfo = () => {
   const {
     formState: { errors, touchedFields },
   } = useStepContext();

@@ -7,16 +7,11 @@ interface Props {
   type?: "button" | "submit" | "reset" | undefined;
 }
 
-const ButtonDefault = ({
-  children,
-  onClick,
-  style,
-  type = "button",
-}: Props) => {
+const ButtonPurple = ({ children, onClick, style, type = "button" }: Props) => {
   return (
     <button
       type={type}
-      className={`px-5 py-3 bg-marine-blue font-bold text-white text-[18px] rounded-md transition duration-300 hover:bg-pastel-blue hover:text-marine-blue`}
+      className={`px-5 py-3 bg-purplish-blue font-bold text-white text-[18px] rounded-md transition duration-300 hover:bg-marine-blue`}
       style={style}
       onClick={onClick}
     >
@@ -25,4 +20,4 @@ const ButtonDefault = ({
   );
 };
 
-export default ButtonDefault;
+export default ButtonPurple;

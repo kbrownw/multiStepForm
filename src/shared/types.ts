@@ -5,7 +5,7 @@ import {
 } from "react-hook-form";
 
 export interface FormValues {
-  [key: string]: string;
+  [key: string]: string | string[];
 }
 
 export interface Step {

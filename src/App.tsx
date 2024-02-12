@@ -9,12 +9,19 @@ function App() {
   const isLargeScreen = useMediaQuery("(min-width: 770px)");
   const {
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, dirtyFields },
   } = useStepContext();
 
   const onSubmit = handleSubmit((data) => {
-    if (isValid) {
-      console.log("Data", data);
+    if (isValid && dirtyFields) {
+      if (
+        dirtyFields["plan"] &&
+        dirtyFields["name"] &&
+        dirtyFields["email"] &&
+        dirtyFields["phone"]
+      ) {
+        console.log("Data", data);
+      }
     }
     console.log("Errors: ", errors);
   });
@@ -30,7 +37,7 @@ function App() {
         {/* SIDEBAR */}
         <Sidebar isLargeScreen={isLargeScreen} />
         {/* TEXT AND FORM AREA */}
-        <form className="grid h-full md:px-28" onSubmit={onSubmit}>
+        <form className="grid h-full md:w-[80%] md:mx-auto" onSubmit={onSubmit}>
           <div className="w-[90%] mx-auto p-5 rounded-lg bg-white shadow-lg md:w-full md:shadow-none">
             {/* TITLE AND SUBTITLE */}
             <Heading />

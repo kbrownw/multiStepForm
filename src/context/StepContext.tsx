@@ -47,6 +47,7 @@ export const StepContextWrapper = ({ children }: Props) => {
       email: "",
       phone: "",
       plan: "",
+      addons: [],
     },
   });
 

@@ -1,5 +1,6 @@
 import { useStepContext } from "../context/StepContext";
 import ButtonDefault from "./ButtonDefault";
+import ButtonPurple from "./ButtonPurple";
 import ButtonTransparent from "./ButtonTransparent";
 
 const FormFooter = () => {
@@ -21,7 +22,7 @@ const FormFooter = () => {
           </ButtonDefault>
         )}
         {selectedStep + 1 === steps.length && (
-          <ButtonDefault type="submit">Confirm</ButtonDefault>
+          <ButtonPurple type="submit">Confirm</ButtonPurple>
         )}
       </div>
     </div>

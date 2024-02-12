@@ -1,16 +1,16 @@
 import { useStepContext } from "../context/StepContext";
+import FormAddons from "./FormAddons";
 import FormPersonalInfo from "./FormPersonalInfo";
 import FormPlanSelect from "./FormPlanSelect";
 
-type Props = {};
-
-const Form = (props: Props) => {
+const Form = () => {
   const { selectedStep } = useStepContext();
 
   return (
     <div className="text-marine-blue my-5">
       {selectedStep === 0 && <FormPersonalInfo />}
       {selectedStep === 1 && <FormPlanSelect />}
+      {selectedStep === 2 && <FormAddons />}
     </div>
   );
 };
