@@ -2,6 +2,7 @@ import {
   UseFormRegister,
   UseFormHandleSubmit,
   FormState,
+  UseFormGetValues,
 } from "react-hook-form";
 
 export interface FormValues {
@@ -24,4 +25,19 @@ export interface StepContextType {
   formState: FormState<FormValues>;
   isYearly: boolean;
   setIsYearly: (value: boolean) => void;
+  getValues: UseFormGetValues<FormValues>;
+}
+
+export interface AddOns {
+  [key: string]: {
+    name: string;
+    cost: number;
+  };
+}
+
+export interface Plans {
+  [key: string]: {
+    name: string;
+    cost: number;
+  };
 }

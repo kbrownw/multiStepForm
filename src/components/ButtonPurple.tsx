@@ -11,7 +11,7 @@ const ButtonPurple = ({ children, onClick, style, type = "button" }: Props) => {
   return (
     <button
       type={type}
-      className={`px-5 py-3 bg-purplish-blue font-bold text-white text-[18px] rounded-md transition duration-300 hover:bg-marine-blue`}
+      className={`px-7 py-3 bg-purplish-blue font-bold text-white text-[18px] rounded-md transition duration-300 hover:bg-marine-blue`}
       style={style}
       onClick={onClick}
     >
