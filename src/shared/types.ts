@@ -26,6 +26,8 @@ export interface StepContextType {
   isYearly: boolean;
   setIsYearly: (value: boolean) => void;
   getValues: UseFormGetValues<FormValues>;
+  isFinished: boolean;
+  setIsFinished: (value: boolean) => void;
 }
 
 export interface AddOns {

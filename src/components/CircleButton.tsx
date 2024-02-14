@@ -11,7 +11,7 @@ const CircleButton = ({ children, onClick, style }: Props) => {
     <button
       style={style}
       onClick={onClick}
-      className="rounded-full border border-white border-solid py-1 px-3 font-bold"
+      className="rounded-full border border-white border-solid py-1 px-3 font-bold transition duration-300"
     >
       {children}
     </button>

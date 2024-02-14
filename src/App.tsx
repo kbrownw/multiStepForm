@@ -4,12 +4,13 @@ import Heading from "./components/Heading";
 import FormFooter from "./components/FormFooter";
 import Form from "./components/Form";
 import { useStepContext } from "./context/StepContext";
+import ThankYou from "./components/ThankYou";
 
 function App() {
   const isLargeScreen = useMediaQuery("(min-width: 770px)");
   const {
     handleSubmit,
-    formState: { errors, isValid, dirtyFields },
+    formState: { isValid, dirtyFields, isSubmitSuccessful },
   } = useStepContext();
 
   const onSubmit = handleSubmit((data) => {
@@ -23,7 +24,6 @@ function App() {
         console.log("Data", data);
       }
     }
-    console.log("Errors: ", errors);
   });
 
   return (
@@ -38,13 +38,19 @@ function App() {
         <Sidebar isLargeScreen={isLargeScreen} />
         {/* TEXT AND FORM AREA */}
         <form className="grid h-full md:w-[80%] md:mx-auto" onSubmit={onSubmit}>
-          <div className="w-[90%] mx-auto p-5 rounded-lg bg-white shadow-lg md:w-full md:shadow-none">
-            {/* TITLE AND SUBTITLE */}
-            <Heading />
-            {/* INPUT FIELDS */}
-            <Form />
+          <div className="self-start w-[90%] mx-auto p-5 rounded-lg bg-white shadow-lg md:w-full md:h-full md:shadow-none">
+            {isSubmitSuccessful ? (
+              <ThankYou />
+            ) : (
+              <>
+                {/* TITLE AND SUBTITLE */}
+                <Heading />
+                {/* INPUT FIELDS */}
+                <Form />
+              </>
+            )}
           </div>
-          <FormFooter />
+          {!isSubmitSuccessful && <FormFooter />}
         </form>
       </section>
     </main>

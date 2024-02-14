@@ -2,6 +2,7 @@ import Label from "./Label";
 import InputText from "./InputText";
 import { useStepContext } from "../context/StepContext";
 import { FieldError } from "react-hook-form";
+import PTextError from "./PTextError";
 
 const FormPersonalInfo = () => {
   const {
@@ -23,9 +24,7 @@ const FormPersonalInfo = () => {
       <div>
         <div className="flex justify-between">
           <Label>Name</Label>
-          <p className="text-strawberry-red">
-            {errors?.name && errors.name.message}
-          </p>
+          <PTextError>{errors?.name && errors.name.message}</PTextError>
         </div>
         <InputText
           registerKey="name"
@@ -37,9 +36,9 @@ const FormPersonalInfo = () => {
       <div>
         <div className="flex justify-between">
           <Label>Email Address</Label>
-          <p className="text-strawberry-red">
+          <PTextError>
             {errors?.email && touchedFields.email && errors.email.message}
-          </p>
+          </PTextError>
         </div>
         <InputText
           registerKey="email"
@@ -53,9 +52,7 @@ const FormPersonalInfo = () => {
       <div>
         <div className="flex justify-between">
           <Label>Phone Number</Label>
-          <p className="text-strawberry-red">
-            {errors?.phone && errors.phone.message}
-          </p>
+          <PTextError>{errors?.phone && errors.phone.message}</PTextError>
         </div>
         <InputText
           registerKey="phone"

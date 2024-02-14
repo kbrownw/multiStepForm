@@ -4,7 +4,7 @@ import ButtonPurple from "./ButtonPurple";
 import ButtonTransparent from "./ButtonTransparent";
 
 const FormFooter = () => {
-  const { steps, setSelectedStep, selectedStep } = useStepContext();
+  const { steps, setSelectedStep, selectedStep, isFinished } = useStepContext();
 
   return (
     <div className="grid grid-cols-2 p-5 bg-white justify-between items-center self-end">
@@ -22,7 +22,9 @@ const FormFooter = () => {
           </ButtonDefault>
         )}
         {selectedStep + 1 === steps.length && (
-          <ButtonPurple type="submit">Confirm</ButtonPurple>
+          <ButtonPurple type="submit" isDisabled={!isFinished}>
+            Confirm
+          </ButtonPurple>
         )}
       </div>
     </div>
