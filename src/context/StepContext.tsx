@@ -41,7 +41,16 @@ export const StepContextWrapper = ({ children }: Props) => {
   const [selectedStep, setSelectedStep] = useState<number>(0);
   const [isYearly, setIsYearly] = useState<boolean>(false);
   const [isFinished, setIsFinished] = useState<boolean>(false);
-  const { register, handleSubmit, formState, getValues } = useForm<FormValues>({
+  const [phoneValid, setPhoneValid] = useState<boolean>(true);
+  const {
+    register,
+    handleSubmit,
+    formState,
+    getValues,
+    setError,
+    clearErrors,
+  } = useForm<FormValues>({
+    criteriaMode: "all",
     mode: "all",
     defaultValues: {
       name: "",
@@ -66,6 +75,10 @@ export const StepContextWrapper = ({ children }: Props) => {
         getValues,
         isFinished,
         setIsFinished,
+        setError,
+        clearErrors,
+        phoneValid,
+        setPhoneValid,
       }}
     >
       {children}

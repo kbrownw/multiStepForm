@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { addOns } from "../shared/data";
 
 interface Props {

@@ -3,6 +3,8 @@ import {
   UseFormHandleSubmit,
   FormState,
   UseFormGetValues,
+  UseFormSetError,
+  UseFormClearErrors,
 } from "react-hook-form";
 
 export interface FormValues {
@@ -28,6 +30,10 @@ export interface StepContextType {
   getValues: UseFormGetValues<FormValues>;
   isFinished: boolean;
   setIsFinished: (value: boolean) => void;
+  setError: UseFormSetError<FormValues>;
+  clearErrors: UseFormClearErrors<FormValues>;
+  phoneValid: boolean;
+  setPhoneValid: (value: boolean) => void;
 }
 
 export interface AddOns {
